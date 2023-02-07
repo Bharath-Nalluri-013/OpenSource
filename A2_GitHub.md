@@ -6,12 +6,85 @@
     - Use `git log --decorate` to explore the structure of commits.
 
 ```
+1. Used "git branch" to find branches of this repositories
+Branches in the repository: 1 (main branch)
+Name of the branch: feature-foo
+
+2. Used "git checkout" to navigate to main branch
+
+3. To track commits, I used "git log --decorate" command
+Upon running the command, we can see we have 3 commits in total.
+3 Commits:
+commit f67f266cf420735187053f10d32e2c0f7cbc5a43 (HEAD -> master)
+Author: Igor Steinmacher <igorsteinmacher@gmail.com>
+Date:   Fri Aug 24 15:30:05 2018 -0700
+
+    Adding class B skeleton
+
+commit 309b0d73ff9c2163591c9e96e307fe61b4c8f58a
+Author: Igor Steinmacher <igorsteinmacher@gmail.com>
+Date:   Fri Aug 24 15:27:16 2018 -0700
+
+    Adding class A skeleton
+
+commit 9c1eeb8901b0926ce7fa13cc6ce0a1876fc4179b
+Author: Igor Steinmacher <igorsteinmacher@gmail.com>
+Date:   Fri Aug 24 15:26:44 2018 -0700
+
+    Creating all files (all empty)
+
 
 
 ```
 
 2. Try `git log --graph --all` to see the commit tree. Paste the result here and write a paragraph to provide an interpretation of what you found.
 ```
+Result after running the command "git log --graph --all" is as follows:
+commit f67f266cf420735187053f10d32e2c0f7cbc5a43 (HEAD -> master)
+Author: Igor Steinmacher <igorsteinmacher@gmail.com>
+Date:   Fri Aug 24 15:30:05 2018 -0700
+
+    Adding class B skeleton
+
+commit 309b0d73ff9c2163591c9e96e307fe61b4c8f58a
+Author: Igor Steinmacher <igorsteinmacher@gmail.com>
+Date:   Fri Aug 24 15:27:16 2018 -0700
+
+    Adding class A skeleton
+
+commit 9c1eeb8901b0926ce7fa13cc6ce0a1876fc4179b
+Author: Igor Steinmacher <igorsteinmacher@gmail.com>
+Date:   Fri Aug 24 15:26:44 2018 -0700
+
+    Creating all files (all empty)
+
+E:\Spring 2023\Open Source Software Dev\A2 Git and Github\handson>git log --graph --all
+* commit f67f266cf420735187053f10d32e2c0f7cbc5a43 (HEAD -> master)
+| Author: Igor Steinmacher <igorsteinmacher@gmail.com>
+| Date:   Fri Aug 24 15:30:05 2018 -0700
+|
+|     Adding class B skeleton
+|
+| * commit a70a8e9d3c5390e367028faf033f2a9ef03d2e91 (feature-foo)
+|/  Author: Igor Steinmacher <igorsteinmacher@gmail.com>
+|   Date:   Fri Aug 24 15:29:22 2018 -0700
+|
+|       Adding header of method foo()
+|
+* commit 309b0d73ff9c2163591c9e96e307fe61b4c8f58a
+| Author: Igor Steinmacher <igorsteinmacher@gmail.com>
+| Date:   Fri Aug 24 15:27:16 2018 -0700
+|
+|     Adding class A skeleton
+|
+* commit 9c1eeb8901b0926ce7fa13cc6ce0a1876fc4179b
+  Author: Igor Steinmacher <igorsteinmacher@gmail.com>
+  Date:   Fri Aug 24 15:26:44 2018 -0700
+
+      Creating all files (all empty)
+
+
+
 
 
 ```
