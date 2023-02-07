@@ -229,5 +229,13 @@ git rebase master #used to keep master branch up to date
 13. Complete Part 2. Then, come back here and answer the following:
 Report your experience of submitting the Part 2. Please, include the steps you followed, the commands you used, and the hurdles you faced (within the file you created for the **Part 1**).
 ```
+Experience submitting Part 1 of this assignment:
+1. I had experince with GitHub when I was in my UnderGrad. I created a repo and uploaded some files from my local machine to host them.
+2. I know how to use GitHub but I did not use git commands.
+3. For the questions that I am not sure with git, I referred slides from the lecture, browsed online to get more info about some commands.
+4. There were plenty of resources and explanations for a specific command. I used those references for commands like git log graph, git ls files and so on.
+5. Talking about the challenges for this task, I was confused when I see remote branches while listing the branches for the repository. I had to know more information about remote branches and the ways to deal remote branches. I cloned local repository into GitHub desktop and thats where issues started. I figured out ways to deal with remote branches as well.
 
+
+I have not faces any challenges with task 2 for the assignment. May be I should be more familiar with formatting md file in a github.
 
