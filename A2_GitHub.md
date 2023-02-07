@@ -33,6 +33,9 @@ Date:   Fri Aug 24 15:26:44 2018 -0700
     Creating all files (all empty)
 
 
+(Please find result screenshot at https://github.com/Bharath-Nalluri-013/OpenSource/tree/A2_Github-Practice -- A2Q1.png)
+
+
 
 ```
 
@@ -88,6 +91,8 @@ Git log is used to list all the commits for the repository. Git log has many opt
 out of these commits, each * represents single commit commits and '/' this symbol indicates that the commit is in child branch that is "feature-foo". Others are the main branch commits.
 
 
+(Please find result screenshot at https://github.com/Bharath-Nalluri-013/OpenSource/tree/A2_Github-Practice -- A2Q2.png)
+
 
 
 ```
@@ -95,14 +100,24 @@ out of these commits, each * represents single commit commits and '/' this symbo
 3. Choose an already existing branch and use `git diff BRANCH_NAME` to view the differences from a branch and the current branch. Summarize the difference from master to the other branch.
 
 ```
-
+--> git diff branch_name compares and gives us differences between the branch that we are currently on and the branch_name we entered. 
+--> In our case, we are in our main branch. So we compared main branch with feature_foo branch.
+--> Upon running the command "git diff feature-foo", we can see :
+diff is comparing A.Java files from both the branches.
+--- indicates one of the branches java files and +++ indicates java file from another comparing branch.
+--- is also color coded in red and +++ is color coded in green which shows what are the changes in both the java files. This color coding helps in easily identifying differences between the context in files.
+(Please find screenshot for the color coded output on https://github.com/Bharath-Nalluri-013/OpenSource/tree/A2_Github-Practice -- A1Q3.png)
 
 ```
 
 4. Write a command sequence to merge the branch that is not the master branch into `master`.
 
 ```
+Commands to merge a non-master branch into master branch:
+git checkout master #enter master branch
+git merge branch_name #merge branch branch_name into master branch
 
+Since the repository we are working is on local machine, we don't need to worry about remote repositories. If it is a remote repository, we have fetch recent changes from remote repository and also push changes to remote repository.
 
 ```
 
@@ -110,35 +125,76 @@ out of these commits, each * represents single commit commits and '/' this symbo
 5. Write a command (or sequence) to (i) create a new branch called `math` (from the `master`) and (ii) change to this branch.
 
 ```
+i. To create a new branch called 'math':  git branch math
+ii. To change to created branch: git checkout math
+We can also do this in one step: git checkout -b math
+(I assumed we are already in master branch, if we are not in master branch, we have to move to master branch first (using git checkout master) and then run above commands.)
 
+(Please find command screenshots on https://github.com/Bharath-Nalluri-013/OpenSource/tree/A2_Github-Practice A2Q5.png)
 
 ```
    
 6. Edit B.py adding the following source code below the content you have there.
 ```
+Lines to be added:
 print 'I know math, look:'
 print 2+2
+
+Commands to make above changes:
+git checkout master
+git ls--files
+(#here open the file that you need from all files in the branch on your local machine, in our case its B.java, save file and close editor.)
+git add B.java
+
+ 
+(Please find command screenshots on https://github.com/Bharath-Nalluri-013/OpenSource/tree/A2_Github-Practice A2Q6.png)
+
 ```
 
 7. Write a command (or sequence) to commit your changes.
 ```
+git commit -m "Additional 2 lines were added at the end to the file."
+(#here commit new changes with a message)
 
-
+(Please find command screenshots on https://github.com/Bharath-Nalluri-013/OpenSource/tree/A2_Github-Practice A2Q6.png)
 ```
 
 8. Change back to the `master` branch and change B.py adding the following source code (commit your change to `master`):
 ```
+Changes to be made:
 print 'hello world!'
+
+Commands to do that:
+git checkout master (#changes current branch to master)
+git ls--files (#lists all the files, select B.py file and edit in text editor and add print 'hello world!' line)
+git add B.py
+git commit -m "Added new line at the end!"
+
+(This is similar to Q6 and Q7. So I have not added screenshots on practice branch.)
+
+
 ```
 
 9. Write a command sequence to merge the `math` branch into `master` and describe what happened.
 ```
+Commands to merge ath into master:
+git checkout master
+git merge math
+
+Explanation:
+You have to enter master branch first to merge. So we used git checkout master.
+Second step is to merge math branch(which we created in q5). we use "git merge" math to merge.
+Make sure to check the conflicts if we have any. In our case we have no conflicts.
+
+((Please find command screenshots on https://github.com/Bharath-Nalluri-013/OpenSource/tree/A2_Github-Practice A2Q9.png))
 
 
 ```
    
 10. Write a set of commands to abort the merge.
 ```
+To abort a merge: git merge --abort
+Aborts latest merge.
 
 
 ```
