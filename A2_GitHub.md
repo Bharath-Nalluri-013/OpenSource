@@ -219,7 +219,10 @@ next commit your changes and add a message using git commit "message".
 
 12. Write a command (or set of commands) to proceed with the merge and make `master` branch up-to-date.
 ```
-
+git checkout master
+git merge branch_name
+git rebase master #used to keep master branch up to date
+(or) git commit -m "merge branch_name into master"  is used to leep master branch up to date after merging branches.
 
 ```
 
