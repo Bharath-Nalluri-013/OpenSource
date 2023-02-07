@@ -177,7 +177,7 @@ git commit -m "Added new line at the end!"
 
 9. Write a command sequence to merge the `math` branch into `master` and describe what happened.
 ```
-Commands to merge ath into master:
+Commands to merge math into master:
 git checkout master
 git merge math
 
@@ -196,12 +196,24 @@ Make sure to check the conflicts if we have any. In our case we have no conflict
 To abort a merge: git merge --abort
 Aborts latest merge.
 
+Incase if you have remote repositories, there is an another way to abort the merge.
 
 ```
    
 11. Now repeat item 9, but proceed with the manual merge (editing B.py). All implemented methods are needed. Explain your procedure.
 ```
+Commands:
+git checkout main
+git merge math
+git add B.py
+git commit -m "Manual merging is done."
 
+Explanation:
+Unlike previous step, we have done manual merge here. 
+Navigate to master branch.
+merge math branch to master using git merge.
+now add file B.py using git add B.py this is what manual addition is.
+next commit your changes and add a message using git commit "message".
 
 ```
 
