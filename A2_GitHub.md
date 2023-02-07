@@ -7,9 +7,8 @@
 
 ```
 1. Used "git branch" to find branches of this repositories
-Branches in the repository: 1 (main branch)
-Name of the branch: feature-foo
-
+Branches in the repository: 2
+Name of the branches: feature-foo and main
 2. Used "git checkout" to navigate to main branch
 
 3. To track commits, I used "git log --decorate" command
@@ -83,6 +82,10 @@ E:\Spring 2023\Open Source Software Dev\A2 Git and Github\handson>git log --grap
 
       Creating all files (all empty)
 
+
+Upon looking at the tree above, I can understand,
+Git log is used to list all the commits for the repository. Git log has many options and one of them is graph. git log --graph is used to show graphical representation of the commit history. This representation is shown on the left hand side of the output.
+out of these commits, each * represents single commit commits and '/' this symbol indicates that the commit is in child branch that is "feature-foo". Others are the main branch commits.
 
 
 
