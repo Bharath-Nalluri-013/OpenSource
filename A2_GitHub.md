@@ -170,7 +170,7 @@ print 'hello world!'
 
 Commands to do that:
 git checkout master (#changes current branch to master)
-git ls--files (#lists all the files, select B.py file and edit in text editor and add print 'hello world!' line)
+git ls-files (#lists all the files, select B.py file and edit in text editor and add print 'hello world!' line)
 git add B.py
 git commit -m "One Additional lines was added at the end to the file on math branch."
 
@@ -244,7 +244,7 @@ Experience submitting Part 1 of this assignment:
 2. I know how to use GitHub but I did not use git commands.
 3. For the questions that I am not sure with git, I referred slides from the lecture, browsed online to get more info about some commands.
 4. There were plenty of resources and explanations for a specific command. I used those references for commands like git log graph, git ls files and so on.
-5. Talking about the challenges for this task, I was confused when I see remote branches while listing the branches for the repository. I had to know more information about remote branches and the ways to deal remote branches. I cloned local repository into GitHub desktop and thats where issues started. I figured out ways to deal with remote branches as well. I also had difficulty in clearing the conflicts, how to compare and clear. Upon practice, I was able to figure out things for conflicts.
+5. Talking about the challenges for this task, I was confused when I see remote branches while listing the branches for the repository. I had to know more information about remote branches and the ways to deal remote branches. I cloned local repository into GitHub desktop and thats where issues started. I figured out ways to deal with remote branches as well. I also had difficulty in clearing the conflicts, how to compare and clear. Upon practice, I was able to figure out things for conflicts. I started freshly with new extract to my local machine to work with conflicts. :)
 One useful resources I think useful for this assignment:
 https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging
 
