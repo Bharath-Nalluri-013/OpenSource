@@ -106,6 +106,8 @@ out of these commits, each * represents single commit commits and '/' this symbo
 diff is comparing A.Java files from both the branches.
 --- indicates one of the branches java files and +++ indicates java file from another comparing branch.
 --- is also color coded in red and +++ is color coded in green which shows what are the changes in both the java files. This color coding helps in easily identifying differences between the context in files.
+
+
 (Please find screenshot for the color coded output on https://github.com/Bharath-Nalluri-013/OpenSource/tree/A2_Github-Practice -- A1Q3.png)
 
 ```
@@ -114,8 +116,8 @@ diff is comparing A.Java files from both the branches.
 
 ```
 Commands to merge a non-master branch into master branch:
-git checkout master #enter master branch
-git merge branch_name #merge branch branch_name into master branch
+git checkout master      #enter master branch
+git merge branch_name    #merge branch branch_name into master branch
 
 Since the repository we are working is on local machine, we don't need to worry about remote repositories. If it is a remote repository, we have fetch recent changes from remote repository and also push changes to remote repository.
 
@@ -125,8 +127,11 @@ Since the repository we are working is on local machine, we don't need to worry 
 5. Write a command (or sequence) to (i) create a new branch called `math` (from the `master`) and (ii) change to this branch.
 
 ```
-i. To create a new branch called 'math':  git branch math
-ii. To change to created branch: git checkout math
+Commands to do this part of the question:
+git checkout master    #Naviagtes to master branch
+git branch math        #To create a new branch called 'math'
+git checkout math      #To change to created branch
+
 We can also do this in one step: git checkout -b math
 (I assumed we are already in master branch, if we are not in master branch, we have to move to master branch first (using git checkout master) and then run above commands.)
 
@@ -142,21 +147,20 @@ print 2+2
 
 Commands to make above changes:
 git checkout master
-git ls--files
-(#here open the file that you need from all files in the branch on your local machine, in our case its B.java, save file and close editor.)
+git ls-files      
+(#here open the file that you need from all files in the branch on your local machine, in our case its B.java,make changes which is adding lines, save file and close editor)
 git add B.java
 
- 
 (Please find command screenshots on https://github.com/Bharath-Nalluri-013/OpenSource/tree/A2_Github-Practice A2Q6.png)
 
 ```
 
 7. Write a command (or sequence) to commit your changes.
 ```
-git commit -m "Additional 2 lines were added at the end to the file."
+git commit -m "Two Additional lines were added at the end to the file on main branch."
 (#here commit new changes with a message)
 
-(Please find command screenshots on https://github.com/Bharath-Nalluri-013/OpenSource/tree/A2_Github-Practice A2Q6.png)
+(Please find command screenshots on https://github.com/Bharath-Nalluri-013/OpenSource/tree/A2_Github-Practice A2Q7.png)
 ```
 
 8. Change back to the `master` branch and change B.py adding the following source code (commit your change to `master`):
@@ -168,9 +172,9 @@ Commands to do that:
 git checkout master (#changes current branch to master)
 git ls--files (#lists all the files, select B.py file and edit in text editor and add print 'hello world!' line)
 git add B.py
-git commit -m "Added new line at the end!"
+git commit -m "One Additional lines was added at the end to the file on math branch."
 
-(This is similar to Q6 and Q7. So I have not added screenshots on practice branch.)
+(Please find command screenshots on https://github.com/Bharath-Nalluri-013/OpenSource/tree/A2_Github-Practice A2Q8.png)
 
 
 ```
@@ -184,8 +188,9 @@ git merge math
 Explanation:
 You have to enter master branch first to merge. So we used git checkout master.
 Second step is to merge math branch(which we created in q5). we use "git merge" math to merge.
-Make sure to check the conflicts if we have any. In our case we have no conflicts.
-
+When we run this we run into a confiict. Because there are differences in B.java in main branch and B.java in math branch. So in order to succesfully merge, we have to clear the conflivt by accepting the changes. 
+(I attached a screenshot of conflict at https://github.com/Bharath-Nalluri-013/OpenSource/tree/A2_Github-Practice A2Q9_error.png)
+Change these conflicts, save the file and merge again for successful merge.
 ((Please find command screenshots on https://github.com/Bharath-Nalluri-013/OpenSource/tree/A2_Github-Practice A2Q9.png))
 
 
@@ -194,36 +199,41 @@ Make sure to check the conflicts if we have any. In our case we have no conflict
 10. Write a set of commands to abort the merge.
 ```
 To abort a merge: git merge --abort
-Aborts latest merge.
-
-Incase if you have remote repositories, there is an another way to abort the merge.
+#Aborts latest merge.
 
 ```
    
 11. Now repeat item 9, but proceed with the manual merge (editing B.py). All implemented methods are needed. Explain your procedure.
 ```
 Commands:
-git checkout main
-git merge math
-git add B.py
-git commit -m "Manual merging is done."
+git checkout master
+git merge math         #here you get conflicts
+cat B.java             #shows you conflicts, clear the conflicts
+git add B.java
+git commit -m "conflicts cleared!"
 
 Explanation:
-Unlike previous step, we have done manual merge here. 
-Navigate to master branch.
-merge math branch to master using git merge.
-now add file B.py using git add B.py this is what manual addition is.
-next commit your changes and add a message using git commit "message".
+--> First command is to checkout on master branch. 
+--> Next step, we will try to merge math branch to main branch. When we run this, it throws conflicts, you can either see conflicts by opening the B.java file in an editor or type "cat B.java" to show contents in B.java file.
+--> Now that you opened B.java file in an editor, clear all the conflicts and save the file.
+--> Come back to git cmd, add B.java file by running command "git add B.java"
+--> Commit these changes in the next command.
 
+(Please find command screenshots on https://github.com/Bharath-Nalluri-013/OpenSource/tree/A2_Github-Practice A2Q11.png)
 ```
 
 12. Write a command (or set of commands) to proceed with the merge and make `master` branch up-to-date.
 ```
 git checkout master
-git merge branch_name
-git rebase master #used to keep master branch up to date
-(or) git commit -m "merge branch_name into master"  is used to leep master branch up to date after merging branches.
+git merge math
+#This shows the output "Already upto date"
 
+OR 
+
+git rebase master #used to keep master branch up to date
+
+
+(Please find command screenshots on https://github.com/Bharath-Nalluri-013/OpenSource/tree/A2_Github-Practice A2Q11.png)
 ```
 
 13. Complete Part 2. Then, come back here and answer the following:
@@ -234,8 +244,12 @@ Experience submitting Part 1 of this assignment:
 2. I know how to use GitHub but I did not use git commands.
 3. For the questions that I am not sure with git, I referred slides from the lecture, browsed online to get more info about some commands.
 4. There were plenty of resources and explanations for a specific command. I used those references for commands like git log graph, git ls files and so on.
-5. Talking about the challenges for this task, I was confused when I see remote branches while listing the branches for the repository. I had to know more information about remote branches and the ways to deal remote branches. I cloned local repository into GitHub desktop and thats where issues started. I figured out ways to deal with remote branches as well.
+5. Talking about the challenges for this task, I was confused when I see remote branches while listing the branches for the repository. I had to know more information about remote branches and the ways to deal remote branches. I cloned local repository into GitHub desktop and thats where issues started. I figured out ways to deal with remote branches as well. I also had difficulty in clearing the conflicts, how to compare and clear. Upon practice, I was able to figure out things for conflicts.
+One useful resources I think useful for this assignment:
+https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging
 
-
+Experience submitting Part 2 of this assignment:
+GitHub pullrequest is most important and I previously had some experince in this. So I am able to do this task with no problems.
+For the paper I reported for this task is from google scholar. I was in a process of understanding importance of Pull Requests and this paper helped me understand it.
 I have not faces any challenges with task 2 for the assignment. May be I should be more familiar with formatting md file in a github.
 
